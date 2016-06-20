@@ -5,7 +5,9 @@
     //Angular Modules
     'ui.router',
     //3rd party modules
-    'firebase'
+    'firebase',
+    //custome modules
+    'mutantApp.home'
   ]);
 
 })(); //IIFE
