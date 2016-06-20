@@ -6,6 +6,8 @@
     $stateProvider.state('mutantList',{
       url: '/mutantlist' ,
       templateUrl: 'app/mutantList/mutantList.html',
+      controller: 'MutantListController',
+      controllerAs: 'vm',
     });
   }
 })();
