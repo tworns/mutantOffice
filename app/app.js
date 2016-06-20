@@ -7,7 +7,8 @@
     //3rd party modules
     'firebase',
     //custom modules
-    'mutantApp.home'
+    'mutantApp.home',
+    'mutantApp.mutantList'
   ]);
 
 })(); //IIFE
