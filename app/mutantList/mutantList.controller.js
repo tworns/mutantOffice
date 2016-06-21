@@ -7,10 +7,10 @@
     var mutantsRef = firebase.database().ref().child('mutants');
     vm.mutants = $firebaseArray(mutantsRef);
     vm.addMutant = addMutant;
+    vm.toggleComplete = toggleComplete;
 
     function addMutant() {
       vm.mutants.$add(vm.newMutant);
-      console.log(vm.mutants);
     }
     function Mutant() {
       this.name = '';
@@ -19,7 +19,8 @@
       this.notified = false;
       this.complete = false;
     }
-    function newMutant() {
+    function toggleComplete(mutant) {
+      vm.mutants.$save(mutant);
   }
   }
 })();

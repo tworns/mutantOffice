@@ -29,7 +29,7 @@
         <td>{{mutant.phone}}</td>
         <td>{{mutant.topic}}</td>
         <td>{{mutant.notified ? 'Yes': 'No'}}</td>
-        <td> <input type="checkbox" ng-model ="mutant.complete"> </td>
+        <td> <input type="checkbox" ng-model ="mutant.complete" ng-change= "toggleComplete(mutant)"> </td>
         <td>
           <button class = "button success">Text</button><button class = "button alert">Delete</button>
         </td>
