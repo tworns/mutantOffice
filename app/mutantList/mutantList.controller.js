@@ -1,14 +1,15 @@
 (function(){
   'use strict';
   angular.module('mutantApp.mutantList').controller('MutantListController', MutantListController);
-  // MutantListController.$inject = [] ;
-  function MutantListController(){
+  MutantListController.$inject = ['$firebaseArray'];
+  function MutantListController($firebaseArray){
     var vm = this;
-    vm.mutants = ['Wolverine', 'X23', 'Dave'];
+    var rootRef = firebase.database().ref();
+    vm.mutants = $firebaseArray(rootRef);
     vm.addMutant = addMutant;
-    //vm.newMutant = newMutant;
+
     function addMutant() {
-      vm.mutants.push(vm.newMutant.name);
+      vm.mutants.$add(vm.newMutant);
     }
     function Mutant() {
       this.name = '';
