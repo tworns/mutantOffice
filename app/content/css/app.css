@@ -9,3 +9,7 @@
 margin-top: 8em;
 
 }
+.log-in-form {
+  border: 1px solid #cacaca;
+  padding: 1rem;
+  border-radius: 3px; }

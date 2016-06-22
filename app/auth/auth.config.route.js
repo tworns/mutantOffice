@@ -4,7 +4,7 @@
   configFunc.$inject = ['$stateProvider'];
   function configFunc($stateProvider){
     $stateProvider.state('register',{
-      url:  '/register',
+      url:  '/#/register',
       templateUrl: 'app/auth/register.html',
       controller: 'AuthController',
       controllerAs: vm
