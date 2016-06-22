@@ -23,11 +23,16 @@
 
   function login(user){
     return auth.$signInWithEmailAndPassword(user.email,user.password)
-    .then(function(loggedInUser){console.log(loggedInUser);})
+    .then(function(loggedInUser){
+      //$state.go('mutantList');
+      console.log("GO MUTANTLIST");
+    })
     .catch(function(error){console.log(error);});
   }
   function logout() {
-
+     $signout();
+     console.log('GO HOME');
+     //$state.go('home');
   }
 }
 })();
