@@ -14,6 +14,7 @@
 
     function addMutant() {
       vm.mutants.$add(vm.newMutant);
+      vm.newMutant = new Mutant();
     }
     function Mutant() {
       this.name = '';
