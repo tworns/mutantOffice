@@ -2,8 +2,8 @@
   'use strict';
   angular.module('mutantApp.auth')
   .controller('AuthController',AuthController);
-  AuthController.$inject = ['$firebaseAuth', '$state'];
-  function AuthController($firebaseAuth, $state) {
+  AuthController.$inject = ['$firebaseAuth', '$state', 'authService'];
+  function AuthController($firebaseAuth, $state, authService) {
     var vm = this;
     var auth = $firebaseAuth();
     vm.register = register;
@@ -14,7 +14,7 @@
       password: ''
     };
     function register(user){
-      return auth.$createUserWithEmailAndPassword(user.email,user.password)
+      return authService.register(user)
       .then(function(){
         vm.login(user);
       }).catch(function(error){
