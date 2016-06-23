@@ -1,8 +1,8 @@
 (function(){
   'use strict';
   angular.module('mutantApp.mutantList').controller('MutantListController', MutantListController);
-  MutantListController.$inject = ['mutantService','firebaseDataService'];
-  function MutantListController( mutantService,firebaseDataService){
+  MutantListController.$inject = ['mutantService','firebaseDataService', 'textMessageService'];
+  function MutantListController( mutantService,firebaseDataService, textMessageService){
     var vm = this;
     vm.mutants = mutantService.mutants;
     vm.addMutant = addMutant;
@@ -23,14 +23,7 @@
       vm.mutants.$remove(mutant);
     }
     function sendText(mutant){
-      var newText = {
-        topic: mutant.topic,
-        name: mutant.name,
-        phone: mutant.phone
-      };
-      firebaseDataService.text.push(newText);
-      vm.mutants.$save(mutant);
-
+      textMessageService.sendText(mutant,vm.mutants);
     }
   }
 })();

@@ -4,7 +4,7 @@
 
   function firebaseDataService(){
     var root = firebase.database().ref();
-    var text = root.child('text');
+    var text = root.child('texts');
     var service = {
       root: root,
       text: text,
