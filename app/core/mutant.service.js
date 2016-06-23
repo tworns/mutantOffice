@@ -3,11 +3,12 @@
   angular.module('mutantApp.core')
   .factory('mutantService', mutantService);
 
+  mutantService.$inject = ['$firebaseArray'];
 
-  function mutantService(){
+  function mutantService($firebaseArray){
     var service = {
       Mutant: Mutant,
-
+      mutants: $firebaseArray(firebase.database().ref().child('mutants')),
     };
     return service;
     //////////////////////FUNCTIONS BELOW//////////////////////////
