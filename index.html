@@ -18,7 +18,7 @@
      <div class="top-bar-right">
        <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
          <li><a ui-sref = "login">Log in</a></li>
-         <li><a ng-click = "vm.logout">Log out</a></li>
+         <li><a ng-click = "vm.logout()">Log out</a></li>
        </ul>
      </div>
    </div>
@@ -43,6 +43,7 @@
     <script src = "app/auth/auth.module.js"></script>
     <script src = "app/auth/auth.config.route.js"></script>
     <script src="app/auth/auth.controller.js"></script>
+    <script src = "app/core/core.module.js"></script>
     <!-- Firebase -->
     <script src = "app/firebaseConfig.js"></script>
   </body>
