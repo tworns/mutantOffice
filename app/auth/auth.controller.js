@@ -5,7 +5,6 @@
   AuthController.$inject = ['$firebaseAuth', '$state'];
   function AuthController($firebaseAuth, $state) {
     var vm = this;
-    var state = $state;
     var auth = $firebaseAuth();
     vm.register = register;
     vm.login = login;
@@ -14,24 +13,24 @@
       email: '',
       password: ''
     };
-    function register(user, $state){
-      return auth.$createUserWithEmailAndPassword(user.email,user.password).then(function(){
-        vm.login(user, $state);
+    function register(user){
+      return auth.$createUserWithEmailAndPassword(user.email,user.password)
+      .then(function(){
+        vm.login(user);
       }).catch(function(error){
           console.log(error);
       });
     }
 
-  function login(user, $state){
+  function login(user){
     return auth.$signInWithEmailAndPassword(user.email,user.password)
     .then(function(loggedInUser){
       $state.go('mutantList');
     })
     .catch(function(error){console.log(error);});
   }
-  function logout($state) {
+  function logout() {
      auth.$signOut();
-      console.log('GO HOME');
        $state.go('home');
     }
 }

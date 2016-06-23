@@ -4,7 +4,6 @@
   MutantListController.$inject = ['mutantService','firebaseDataService'];
   function MutantListController( mutantService,firebaseDataService){
     var vm = this;
-    var textRef = firebaseDataService.root.child('texts');
     vm.mutants = mutantService.mutants;
     vm.addMutant = addMutant;
     vm.newMutant = new mutantService.Mutant();
@@ -29,7 +28,7 @@
         name: mutant.name,
         phone: mutant.phone
       };
-      textRef.push(newText);
+      firebaseDataService.text.push(newText);
       vm.mutants.$save(mutant);
 
     }
