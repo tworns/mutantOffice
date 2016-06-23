@@ -8,6 +8,7 @@
     var service = {
       root: root,
       text: text,
+      mutants: root.child('mutants'),
     };
 
     return service;
