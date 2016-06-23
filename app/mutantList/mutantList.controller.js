@@ -1,11 +1,11 @@
 (function(){
   'use strict';
   angular.module('mutantApp.mutantList').controller('MutantListController', MutantListController);
-  MutantListController.$inject = ['$firebaseArray','mutantService'];
-  function MutantListController($firebaseArray, mutantService){
+  MutantListController.$inject = ['$firebaseArray','mutantService','firebaseDataService'];
+  function MutantListController($firebaseArray, mutantService,firebaseDataService){
     var vm = this;
-    var mutantsRef = firebase.database().ref().child('mutants');
-    var textRef = firebase.database().ref().child('texts');
+    var mutantsRef = firebaseDataService.root.child('mutants');
+    var textRef = firebaseDataService.root.child('texts');
     vm.mutants = $firebaseArray(mutantsRef);
     vm.addMutant = addMutant;
     vm.newMutant = new mutantService.Mutant();
