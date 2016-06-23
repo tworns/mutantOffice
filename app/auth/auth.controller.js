@@ -23,14 +23,14 @@
     }
 
   function login(user){
-    return auth.$signInWithEmailAndPassword(user.email,user.password)
+    return authService.login(user)
     .then(function(loggedInUser){
       $state.go('mutantList');
     })
     .catch(function(error){console.log(error);});
   }
   function logout() {
-     auth.$signOut();
+    authService.logout();
        $state.go('home');
     }
 }
