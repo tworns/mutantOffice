@@ -7,8 +7,6 @@
     var vm = this;
     vm.register = register;
     vm.login = login;
-    vm.logout = logout;
-    vm.isLoggedIn = authService.isLoggedIn;
 
     vm.user = {
       email: '',
@@ -30,9 +28,6 @@
     })
     .catch(function(error){console.log(error);});
   }
-  function logout() {
-    authService.logout();
-       $state.go('home');
-    }
+
 }
 })();
