@@ -8,6 +8,7 @@
       restrict: 'E',
       controller: NavbarController,
       controllerAs: 'vm',
+      scope: {},
     };
   }
   NavbarController.$inject = ['$state','authService'];
