@@ -9,7 +9,7 @@
 
   </head>
   <body>
-
+    <xt-navbar></xt-navbar>
     <div ui-view class = "row" id = "main"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -18,7 +18,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.0.1/angularfire.min.js"></script>
-   <script src="app\layout\layout.module.js"></script>
+
+
 
     <!-- main app modules -->
     <script src="app/app.js"></script>
@@ -32,12 +33,15 @@
     <script src = "app/auth/auth.module.js"></script>
     <script src = "app/auth/auth.config.route.js"></script>
     <script src="app/auth/auth.controller.js"></script>
-    <script src = "app\auth\auth.service.js"></script>
+    <script src = "app/auth/auth.service.js"></script>
     <!-- Core -->
     <script src = "app/core/core.module.js"></script>
     <script src = "app/core/mutant.service.js"></script>
     <script src = "app/core/firebaseData.service.js"></script>
     <script src ="app/core/textMessage.service.js"></script>
+    <!-- Layout -->
+    <script src="app\layout\layout.module.js"></script>
+    <script src = "app\layout\navbar.directive.js"></script>
 
     <!-- Firebase -->
     <script src = "app/firebaseConfig.js"></script>
