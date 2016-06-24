@@ -12,6 +12,11 @@
     'mutantApp.auth',
     'mutantApp.core',
     'mutantApp.layout',
-  ]);
+  ]).config(configFunc);
+
+  configFunc.$inject = ['$urlRouterProvider'];
+  function configFunc( $urlRouterProvider){
+    $urlRouterProvider.otherwise('/');
+  }
 
 })(); //IIFE
