@@ -8,7 +8,6 @@
     var service = {
       root: root,
       text: text,
-      mutants: root.child('mutants'),
       users: root.child('users'),
     };
 
