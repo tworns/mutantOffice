@@ -15,7 +15,7 @@
       msg: 'Thank you for registering with Mutant Office!',
     };
     console.log("SEND EMAIL::" + newEmail.msg);
-    firebaseDataService.email.push(email);
+    firebaseDataService.email.push(newEmail);
   }
   }
 })();
