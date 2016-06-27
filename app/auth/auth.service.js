@@ -2,8 +2,8 @@
   'use strict';
 
   angular.module('mutantApp.auth').factory('authService',authService);
-  authService.$inject = ['$firebaseAuth', 'emailService'];
-  function authService($firebaseAuth, emailService) {
+  authService.$inject = ['$firebaseAuth'];
+  function authService($firebaseAuth) {
     var auth = $firebaseAuth();
     var service = {
       auth: auth,
@@ -16,8 +16,6 @@
     /////////////////FUNCTIONS BELOW//////////////////////////
 
     function register(user) {
-      console.log("USER EMAIL::" +user.email);
-      emailService.sendEmail(user.email);
       return auth.$createUserWithEmailAndPassword(user.email,user.password);
     }
     function login(user){

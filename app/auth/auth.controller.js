@@ -2,8 +2,8 @@
   'use strict';
   angular.module('mutantApp.auth')
   .controller('AuthController',AuthController);
-  AuthController.$inject = ['$state', 'authService'];
-  function AuthController($state, authService) {
+  AuthController.$inject = ['$state', 'authService', 'emailService'];
+  function AuthController($state, authService, emailService) {
     var vm = this;
     vm.register = register;
     vm.login = login;
@@ -16,7 +16,11 @@
       return authService.register(user)
       .then(function(){
         vm.login(user);
-      }).catch(function(error){
+      }).then(function(){
+        console.log("USER EMAIL::" +user.email);
+        emailService.sendEmail(user.email);
+      })
+      .catch(function(error){
           console.log(error);
       });
     }
