@@ -5,10 +5,12 @@
   function firebaseDataService(){
     var root = firebase.database().ref();
     var text = root.child('texts');
+    var email = root.child('email');
     var service = {
       root: root,
       text: text,
       users: root.child('users'),
+      email: email,
     };
 
     return service;

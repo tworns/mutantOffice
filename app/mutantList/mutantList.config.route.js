@@ -11,7 +11,7 @@
       controllerAs: 'vm',
       resolve: {
         user: resolveUser,
-      },
+      }
     });
   }
   resolveUser.$inject = ['authService'];

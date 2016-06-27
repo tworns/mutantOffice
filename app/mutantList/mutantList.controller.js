@@ -1,8 +1,8 @@
 (function(){
   'use strict';
   angular.module('mutantApp.mutantList').controller('MutantListController', MutantListController);
-  MutantListController.$inject = ['mutantService','firebaseDataService', 'textMessageService', 'user'];
-  function MutantListController( mutantService,firebaseDataService, textMessageService, user){
+  MutantListController.$inject = ['mutantService','firebaseDataService', 'textMessageService', 'user', 'emailService'];
+  function MutantListController( mutantService,firebaseDataService, textMessageService, user, emailService){
     var vm = this;
     vm.mutants = mutantService.mutantsByUser(user.uid);
     vm.addMutant = addMutant;
