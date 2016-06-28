@@ -2,8 +2,8 @@
   'use strict';
 
   angular.module('mutantApp.auth').factory('authService',authService);
-  authService.$inject = ['$firebaseAuth'];
-  function authService($firebaseAuth) {
+  authService.$inject = ['$firebaseAuth', 'mutantService'];
+  function authService($firebaseAuth, mutantService) {
     var auth = $firebaseAuth();
     var service = {
       auth: auth,
@@ -22,6 +22,7 @@
       return auth.$signInWithEmailAndPassword(user.email,user.password);
     }
     function logout() {
+      mutantService.reset();
       auth.$signOut();
     }
     function isLoggedIn(){
