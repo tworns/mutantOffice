@@ -1,21 +1,14 @@
 (function(){
   'use strict';
   angular.module('mutantApp.mutantList').controller('MutantListController', MutantListController);
-  MutantListController.$inject = ['mutantService','firebaseDataService', 'textMessageService', 'user', 'emailService'];
-  function MutantListController( mutantService,firebaseDataService, textMessageService, user, emailService){
+  MutantListController.$inject = ['mutantService', 'textMessageService', 'user', 'emailService'];
+  function MutantListController( mutantService, textMessageService, user, emailService){
     var vm = this;
     vm.mutants = mutantService.mutantsByUser(user.uid);
-    vm.addMutant = addMutant;
-    vm.newMutant = new mutantService.Mutant();
     vm.toggleComplete = toggleComplete;
     vm.deleteMutant = deleteMutant;
     vm.sendText = sendText;
-
-    function addMutant() {
-      vm.mutants.$add(vm.newMutant);
-      vm.newMutant = new mutantService.Mutant(); //need new here, still calling constructor
-    }
-
+    ////////////////////////////FUNCTIONS BELOW//////////////////////
     function toggleComplete(mutant) {
       vm.mutants.$save(mutant);
   }
