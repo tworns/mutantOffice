@@ -7,7 +7,7 @@
     var vm = this;
     vm.register = register;
     vm.login = login;
-
+    vm.error = null;
     vm.user = {
       email: '',
       password: ''
@@ -21,8 +21,8 @@
         emailService.sendEmail(user.email);
       })
       .catch(function(error){
-          console.log(error);
-      });
+        vm.error = error;
+        });
     }
 
   function login(user){
@@ -30,7 +30,7 @@
     .then(function(loggedInUser){
       $state.go('mutantList');
     })
-    .catch(function(error){console.log(error);});
+    .catch(function(error){vm.error = error;});
   }
 
 }
