@@ -15,8 +15,8 @@
     };
   }
 
-  MutantTableController.$inject = ['mutantService'];
-  function MutantTableController(mutantService){
+  MutantTableController.$inject = [ 'textMessageService'];
+  function MutantTableController(textMessageService){
     var vm = this;
     vm.toggleComplete = toggleComplete;
     vm.deleteMutant = deleteMutant;
