@@ -17,7 +17,7 @@
   MutantFormController.$inject = ['mutantService', '$scope'];
   function MutantFormController(mutantService, $scope){
     var vm = this;
-    //vm.mutants = mutantService.mutantsByUser(user.uid);
+    vm.mutants = $scope.mutants;//mutantService.mutantsByUser(user.uid);
     vm.addMutant = addMutant;
     vm.newMutant = new mutantService.Mutant();
 
