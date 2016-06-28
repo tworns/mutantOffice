@@ -8,16 +8,17 @@
       restrict: 'E',
       controller: MutantFormController,
       controllerAs: 'vm',
+      bindToController: true,
       scope: {
         mutants: '='
       },
     };
   }
 
-  MutantFormController.$inject = ['mutantService', '$scope'];
-  function MutantFormController(mutantService, $scope){
+  MutantFormController.$inject = ['mutantService'];
+  function MutantFormController(mutantService){
     var vm = this;
-    vm.mutants = $scope.mutants;//mutantService.mutantsByUser(user.uid);
+    vm.mutants = vm.mutants;//mutantService.mutantsByUser(user.uid);
     vm.addMutant = addMutant;
     vm.newMutant = new mutantService.Mutant();
 
