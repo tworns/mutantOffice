@@ -12,6 +12,8 @@
       email: '',
       password: ''
     };
+
+    ///functions///
     function register(user){
       return authService.register(user)
       .then(function(){
