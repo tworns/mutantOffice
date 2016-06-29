@@ -1,13 +1,19 @@
 <div class="medium-6 medium-centered large-4 large-centered columns">
-  <form ng-submit="vm.login(vm.user)">
+  <form name = "authForm" ng-submit="vm.login(vm.user)" novalidate>
     <div class="column log-in-form">
       <h4 class="text-center">Login </h4>
+      <!--  Auth errors-->
+      <div class="callout small alert" ng-show = "vm.error" ng-bind = "vm.error"></div>
       <label>Email
-        <input type="email" placeholder="somebody@example.com" ng-model = "vm.user.email"autofocus required>
+        <input name = "email" type="email" placeholder="somebody@example.com" ng-model = "vm.user.email"autofocus required>
       </label>
+      <div class = "callout small alert" ng-show = "authForm.$submitted && authForm.email.$error.required" ng-bind = "vm.error">
+        Ya dun goofed. Fill in email address.</div>
+        <div class = "callout small alert" ng-show = "authForm.$submitted && authForm.email.$error.email" ng-bind = "vm.error">Invalid email address.</div>
       <label>Password
-      <input type="password" placeholder="Password" ng-model = "vm.user.password" required>
+      <input name = "password" type="password" placeholder="Password" ng-model = "vm.user.password" required>
       </label>
+      <div class = "callout small alert" ng-show = "authForm.$submitted && authForm.password.$error.required" ng-bind = "vm.error">Password Required.</div>
       <p><button type="submit" class="button expanded">Login</button></p>
     </div>
 
