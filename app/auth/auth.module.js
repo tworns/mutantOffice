@@ -1,4 +1,4 @@
 (function(){
   'use strict';
-  angular.module('mutantApp.auth',['toaster', 'ngAnimate']);
+  angular.module('mutantApp.auth',[]);
 })();
