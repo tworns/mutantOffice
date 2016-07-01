@@ -7,7 +7,7 @@
     var vm = this;
     vm.mutants = mutantService.mutantsByUser(user.uid);
 
-    ////////////////////////////FUNCTIONS BELOW//////////////////////
+  /////////////////FUNCTIONS BELOW//////////////////////
 
   }
 })();
