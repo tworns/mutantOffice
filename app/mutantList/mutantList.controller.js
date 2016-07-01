@@ -4,8 +4,9 @@
   MutantListController.$inject = ['mutantService', 'textMessageService', 'user', 'emailService'];
   function MutantListController( mutantService, textMessageService, user, emailService){
     var vm = this;
+    vm.user = user;
     vm.mutants = mutantService.mutantsByUser(user.uid);
-    
+
     ////////////////////////////FUNCTIONS BELOW//////////////////////
 
   }

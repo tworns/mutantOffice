@@ -10,7 +10,8 @@
       controllerAs: 'vm',
       bindToController: true,
       scope: {
-        mutants: '='
+        mutants: '=',
+        user: '='
       },
     };
   }
@@ -19,6 +20,7 @@
   function MutantFormController(mutantService){
     var vm = this;
     vm.mutants = vm.mutants;//mutantService.mutantsByUser(user.uid);
+    vm.user = vm.user;
     vm.addMutant = addMutant;
     vm.newMutant = new mutantService.Mutant();
 

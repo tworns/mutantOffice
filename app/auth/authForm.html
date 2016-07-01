@@ -17,6 +17,9 @@
       <label>Password
       <input name = "password" type="password" placeholder="Password" ng-model = "vm.user.password" required>
       </label>
+      <label ng-if = "vm.form === 'Register'">Display Name
+      <input name = "display" type = "text" placeholder="DisplayName" ng-model = "vm.user.displayName" required>
+    </label>
       <div class = "callout small alert" ng-show = "authForm.$submitted && authForm.password.$error.required" >Password Required.</div>
       <p><button type="submit" class="button expanded" ng-bind = 'vm.form'></button></p>
     </div>
