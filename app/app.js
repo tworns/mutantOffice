@@ -12,8 +12,9 @@
     'mutantApp.auth',
     'mutantApp.core',
     'mutantApp.layout',
-     'toaster',
-     'ngAnimate'
+    'mutantApp.toast',
+    'toaster',
+    'ngAnimate'
   ]).config(configFunc).run(runFunc);
 
   configFunc.$inject = ['$urlRouterProvider'];

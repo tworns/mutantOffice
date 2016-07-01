@@ -1,6 +1,4 @@
 (function(){
   'use strict';
-  angular.module('mutantApp.mutantList',[
-
-  ]);
+  angular.module('mutantApp.mutantList',[]);
 })();

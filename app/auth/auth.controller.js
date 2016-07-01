@@ -6,10 +6,6 @@
   function AuthController($state, authService, emailService, toaster) {
     var vm = this;
     vm.error = null;
-     vm.pop = pop();
     // ///functions///
-      function pop () {
-      toaster.pop('succcess',"TEST", "TEST");
-    }
 }
-})();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              })();
