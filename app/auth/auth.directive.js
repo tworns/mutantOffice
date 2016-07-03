@@ -16,31 +16,29 @@
     };
   }
 
-  XtAuthController.$inject = ['$state','authService'];
-  function XtAuthController($state,authService){
+  XtAuthController.$inject = ['$state','authService','emailService'];
+  function XtAuthController($state,authService, emailService){
     var vm = this;
     vm.register = register;
     vm.login = login;
     vm.error = null;
-      vm.start = start;
+    vm.start = start;
+    //  vm.updateName = updateName;
     vm.user = {
       email: '',
-      password: ''
+      password: '',
     };
 
 
   ///////////Functions/////////
   function start(user) {
     if(vm.form === 'Login'){
-      console.log("LOGIN:: SUCCESS");
       return vm.login(user);
     }
      if(vm.form === 'Register'){
-      console.log("REGISTER:: SUCCESS");
       return vm.register(user);
     }
     else {
-      console.log( 'INVALID FORM::' + vm.form);
     }
   }
       function register(user){
@@ -48,7 +46,6 @@
         .then(function(){
           vm.login(user);
         }).then(function(){
-          console.log("USER EMAIL::" +user.email);
           emailService.sendEmail(user.email);
         })
         .catch(function(error){
@@ -63,5 +60,8 @@
       })
       .catch(function(error){vm.error = error;});
     }
+    //  function updateName(user){
+    //    return authService.updateName(user);
+    //  }
 }
 })();

@@ -8,6 +8,5 @@
     vm.mutants = mutantService.mutantsByUser(user.uid);
 
     ////////////////////////////FUNCTIONS BELOW//////////////////////
-
   }
 })();
