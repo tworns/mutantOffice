@@ -1,0 +1,30 @@
+{
+  "name": "mutant-office-hours",
+  "description": "a full stack app with user authentication",
+  "main": "app.js",
+  "authors": [
+    "Jenn Simbartl"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jsimb17/Shared-MutantOffice",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "angular": "^1.5.7",
+    "angular-ui-router": "ui-router#^0.3.1",
+    "foundation-sites": "^6.2.3",
+    "angularfire": "^2.0.1",
+    "angular-gravatar": "^0.4.2",
+    "font-awesome": "^4.6.3"
+  },
+  "resolutions": {
+    "jquery": "~2.2.0"
+  }
+}
