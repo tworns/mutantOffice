@@ -8,6 +8,11 @@
    <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
      <li><a ui-sref = "login" ng-show = "!vm.isLoggedIn()">Log in</a></li>
      <li><a ng-click = "vm.logout()" ng-show="vm.isLoggedIn()">Log out</a></li>
+     <li><a ui-sref="profile"><img
+       gravatar-src="vm.isLoggedIn().email"
+       gravatar-size="40"
+       alt="{{vm.isLoggedIn().email}}"
+      ></a></li>
    </ul>
  </div>
 </div>
