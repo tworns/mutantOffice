@@ -60,8 +60,8 @@
       })
       .catch(function(error){vm.error = error;});
     }
-    //  function updateName(user){
-    //    return authService.updateName(user);
-    //  }
+     function updateName(user){
+       return authService.updateName(user);
+     }
 }
 })();

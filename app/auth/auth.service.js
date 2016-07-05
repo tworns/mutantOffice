@@ -30,8 +30,8 @@
     function isLoggedIn(){
       return auth.$getAuth();
     }
-    // function updateName(user){
-    // return  firebaseDataService.users.child(user.uid).update({displayName: user.displayName});
-    // }
+    function updateName(user){
+    return  firebaseDataService.users.child(user.uid).update({displayName: user.displayName});
+    }
   }
 })();
